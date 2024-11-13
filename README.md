@@ -9,7 +9,7 @@ PREDICTING EPL MATCH OUTCOMES USING MACHINE LEARNING
   6.Challenges and Issues Faced
 
 1. Overview
-This project aims to predict the outcomes of EPL matches using three machine learning models: Logistic Regression, Support Vector Machine (SVM), and Random Forest. the models are trained on historical match data and predict whether a game will win by home team or away team or will it be draw.
+This project aims to predict the outcomes of EPL matches using three machine learning models: Logistic Regression, Support Vector Classifier (SVC), and Random Forest. the models are trained on historical match data and predict whether a game will win by home team or away team or will it be draw.
 
 2. Features and Functionality
 Data Preprocessing: The code loads with match data and selected it based on the team and year. then prepares the features for model training.
@@ -30,6 +30,7 @@ AS- away shots
 HST- home shots on target
 AST- away shots on target
 FTR- full time result (H for home win, A for away win, D for draw)
+However, in the code only a selection of features is used. Specifically, the features used include HomeTeam, AwayTeam, HomeForm, AwayForm, AvgHomeGoalsScored, AvgHomeGoalsConceded, AvgAwayGoalsScored, and AvgAwayGoalsConceded. Others features like Shots, Half-Time Goals, Half-Time Result, and Date columns are dropped during preprocessing because these are recorded live and are only available after the game is played. Since we want to predict the match outcome beforehand, these wouldn’t be helpful for pre-game predictions.
 
 4. Output Data/Plots/Tables
 The output includes:
@@ -43,7 +44,7 @@ team_name: The name of the team which predictions are to be made (e.g: Arsenal)
 year: The year for which the match data is to be filtered (e.g: 2012)
 Hyperparameters:
 Logistic Regression- 'max_iter': Maximum number of iterations for the solver (e.g: 200)
-SVM- 'kernel': Type of kernal to be used in the algorithm (e.g: linear)
+SVC- 'kernel': Type of kernal to be used in the algorithm (e.g: linear)
 Random Forest- 'n_estimators': Number of trees in the forest (e.g: 100)
 
 6.Challenges and Issues Faced
